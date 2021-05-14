@@ -10,6 +10,8 @@ import SwiftUI
 struct ShopListView: View {
     @EnvironmentObject var store: AppStore
     @State private var showDialog = false
+    @Binding var name: String
+    @Binding var budget: Double
 
     var body: some View {
         NavigationView {
@@ -25,28 +27,28 @@ struct ShopListView: View {
                     }
                 })
             }
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
             .listStyle(PlainListStyle())
-            .background(Color.red)
-            .alert(isPresented: $showDialog,
-                   TextAlert(title: "Enter name or title",
-                             message: "") { result in
-                    store.send(.shop(action: .add(shop: Shop(name: result ?? ""))))
-                   })
+
             .navigationTitle("Shopping Sessions")
             .navigationBarItems(trailing:
-                Button(action: {
-                    showDialog = true
-                }) {
-                    Image(systemName: "plus.circle").imageScale(.large)
-                }
+                                    Button(action: {
+                                        showDialog = true
+                                    }) {
+                                        Image(systemName: "plus.circle").imageScale(.large)
+                                    }
             )
         }
         .ignoresSafeArea()
+        Text("")
+            .hidden()
+            .sheet(isPresented: $showDialog, content: {
+                NewShopView(name: $name, budget: $budget)
+            })
     }
 }
+
 struct ShopListView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopListView()
+        ShopListView(name: .constant(""), budget: .constant(0.0))
     }
 }
