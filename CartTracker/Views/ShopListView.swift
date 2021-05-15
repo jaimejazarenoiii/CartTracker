@@ -10,25 +10,25 @@ import SwiftUI
 struct ShopListView: View {
     @EnvironmentObject var store: AppStore
     @State private var showDialog = false
-    @Binding var name: String
-    @Binding var budget: Double
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(store.state.shop.shops) { shop in
-                    NavigationLink(destination: Text(shop.name)) {
-                        Text(shop.name)
+                Section(header: ShopListHeaderView()) {
+                    ForEach(store.state.shop.shops) { shop in
+                        NavigationLink(destination: ItemListView(shop: shop)
+                                        .environmentObject(store)) {
+                            ShopRow(shop: shop)
+                        }
                     }
+                    .onDelete(perform: { indexSet in
+                        indexSet.forEach { index in
+                            store.send(.shop(action: .delete(shop: store.state.shop.shops[index])))
+                        }
+                    })
                 }
-                .onDelete(perform: { indexSet in
-                    indexSet.forEach { index in
-                        store.send(.shop(action: .delete(index: index)))
-                    }
-                })
             }
             .listStyle(PlainListStyle())
-
             .navigationTitle("Shopping Sessions")
             .navigationBarItems(trailing:
                                     Button(action: {
@@ -39,16 +39,22 @@ struct ShopListView: View {
             )
         }
         .ignoresSafeArea()
+        .onAppear(perform: fetchShops)
         Text("")
             .hidden()
             .sheet(isPresented: $showDialog, content: {
-                NewShopView(name: $name, budget: $budget)
+                NewShopView(showDialog: $showDialog)
+                    .environmentObject(store)
             })
+    }
+    
+    private func fetchShops() {
+        store.send(.shop(action: .getAll))
     }
 }
 
 struct ShopListView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopListView(name: .constant(""), budget: .constant(0.0))
+        ShopListView()
     }
 }

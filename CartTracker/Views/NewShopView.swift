@@ -9,19 +9,37 @@ import Foundation
 import SwiftUI
 
 struct NewShopView: View {
-    @Binding var name: String
-    @Binding var budget: Double
-
+    @EnvironmentObject var store: AppStore
+    @State var name: String = ""
+    @State var budget: String = ""
+    @Binding var showDialog: Bool
+    
     var body: some View {
-        Form {
-            TextField("Name", text: $name)
-            TextField("Budget", value: $budget, formatter: NumberFormatter())
+        NavigationView {
+            Form {
+                TextField("Name", text: $name)
+                TextField("Budget", text: $budget)
+            }
+            .navigationBarItems(
+                leading: Button("Cancel",
+                                action: {
+                                    showDialog = false
+                                }),
+                trailing:
+                    Button("Save", action: {
+                        store.send(.shop(action: .add(shop: Shop(name: name, budgetAmount: Double(budget) ?? 0.0))))
+                        showDialog = false
+                    })
+            )
+            .navigationBarTitle("Add Shopping Session", displayMode: .inline)
         }
     }
 }
 
 struct NewShopView_Previews: PreviewProvider {
     static var previews: some View {
-        NewShopView(name: .constant(""), budget: .constant(0.0))
+        NewShopView(name: "",
+                    budget: "",
+                    showDialog: .constant(false))
     }
 }
