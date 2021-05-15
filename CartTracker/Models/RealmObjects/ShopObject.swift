@@ -6,5 +6,16 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct ShopObject {}
+class ShopObject: Object {
+    @objc dynamic var id = UUID().hashValue
+    @objc dynamic var name: String = ""
+    var items = List<ItemObject>()
+    @objc dynamic var budgetAmount: Double = 0
+    @objc dynamic var date: Date = Date()
+    
+    override static func primaryKey() -> String? {
+        "id"
+    }
+}
