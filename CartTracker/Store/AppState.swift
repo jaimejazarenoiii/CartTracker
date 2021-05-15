@@ -12,7 +12,7 @@ struct AppState {
     var item: ItemState
 
     init() {
-        self.shop = ShopState(shops: [], shop: Shop(id: "", name: "", items: [], date: Date()))
-        self.item = ItemState(items: [], item: Item(id: "", quantity: 0, price: 0))
+        self.shop = ShopState(shops: [], shop: Shop(name: "", items: [], date: Date()))
+        self.item = ItemState(items: [], item: Item(id: 0, name: "", quantity: 0, price: 0))
     }
 }
