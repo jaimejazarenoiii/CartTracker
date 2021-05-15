@@ -22,7 +22,7 @@ struct ItemRow: View {
 
 struct ItemRow_Previews: PreviewProvider {
     static var previews: some View {
-        ItemRow(item: Item(name: "", quantity: 0, price: 0))
+        ItemRow(item: Item(name: "", quantity: 0.0, price: 0.0))
     }
 }
 
