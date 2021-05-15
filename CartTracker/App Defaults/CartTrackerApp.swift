@@ -13,7 +13,7 @@ struct CartTrackerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ShopListView(name: .constant(""), budget: .constant(0.0))
+            ShopListView()
                 .environmentObject(store)
         }
     }
