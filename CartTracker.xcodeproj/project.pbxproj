@@ -40,6 +40,7 @@
 		E1223CA2264F56FB00B9F9DA /* ShopRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1223CA1264F56FB00B9F9DA /* ShopRow.swift */; };
 		E1223CA7264F596000B9F9DA /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1223CA6264F596000B9F9DA /* NewItemView.swift */; };
 		E1223CAC264F5BE900B9F9DA /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1223CAB264F5BE900B9F9DA /* ItemRow.swift */; };
+		E1C23433265244EC00B530AD /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C23432265244EC00B530AD /* Double+Round.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,10 +94,11 @@
 		E1074F95264FB26600A0D767 /* Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistable.swift; sourceTree = "<group>"; };
 		E1074F9D264FE67300A0D767 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
 		E1223C97264F56B300B9F9DA /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
-		E1223C9C264F56DB00B9F9DA /* ShopListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShopListHeaderView.swift; path = "CartTracker/Custom Components/ShopListHeaderView.swift"; sourceTree = SOURCE_ROOT; };
-		E1223CA1264F56FB00B9F9DA /* ShopRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShopRow.swift; path = "CartTracker/Custom Components/ShopRow.swift"; sourceTree = SOURCE_ROOT; };
+		E1223C9C264F56DB00B9F9DA /* ShopListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShopListHeaderView.swift; path = "CartTracker/Custom Components/Views/ShopListHeaderView.swift"; sourceTree = SOURCE_ROOT; };
+		E1223CA1264F56FB00B9F9DA /* ShopRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShopRow.swift; path = "CartTracker/Custom Components/Views/ShopRow.swift"; sourceTree = SOURCE_ROOT; };
 		E1223CA6264F596000B9F9DA /* NewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
-		E1223CAB264F5BE900B9F9DA /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemRow.swift; path = "CartTracker/Custom Components/ItemRow.swift"; sourceTree = SOURCE_ROOT; };
+		E1223CAB264F5BE900B9F9DA /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemRow.swift; path = "CartTracker/Custom Components/Views/ItemRow.swift"; sourceTree = SOURCE_ROOT; };
+		E1C23432265244EC00B530AD /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,10 +274,8 @@
 		E1074F75264F979100A0D767 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
-				E1223C9C264F56DB00B9F9DA /* ShopListHeaderView.swift */,
-				E1223CA1264F56FB00B9F9DA /* ShopRow.swift */,
-				E1223CAB264F5BE900B9F9DA /* ItemRow.swift */,
-				E1074F79264F981700A0D767 /* ItemListHeaderView.swift */,
+				E1C23430265244BD00B530AD /* Double */,
+				E1C2342F265244B300B530AD /* Views */,
 			);
 			path = "Custom Components";
 			sourceTree = "<group>";
@@ -295,6 +295,25 @@
 				E1074F95264FB26600A0D767 /* Persistable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E1C2342F265244B300B530AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E1223C9C264F56DB00B9F9DA /* ShopListHeaderView.swift */,
+				E1223CA1264F56FB00B9F9DA /* ShopRow.swift */,
+				E1223CAB264F5BE900B9F9DA /* ItemRow.swift */,
+				E1074F79264F981700A0D767 /* ItemListHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E1C23430265244BD00B530AD /* Double */ = {
+			isa = PBXGroup;
+			children = (
+				E1C23432265244EC00B530AD /* Double+Round.swift */,
+			);
+			path = Double;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,6 +459,7 @@
 				B3D66981264D3E1200B628F8 /* ItemReducer.swift in Sources */,
 				B3D6697C264D3E0B00B628F8 /* ItemAction.swift in Sources */,
 				B32FA55D264DE9BE00B4727E /* NewShopView.swift in Sources */,
+				E1C23433265244EC00B530AD /* Double+Round.swift in Sources */,
 				E1223C9D264F56DB00B9F9DA /* ShopListHeaderView.swift in Sources */,
 				B3D66948264D3BAE00B628F8 /* AppAction.swift in Sources */,
 				B3D66965264D3C4700B628F8 /* Shop.swift in Sources */,

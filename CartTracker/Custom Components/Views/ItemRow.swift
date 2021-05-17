@@ -26,7 +26,6 @@ struct ItemRow_Previews: PreviewProvider {
     }
 }
 
-
 private struct ItemRowCell: View {
     var title: String
     var body: some View {
@@ -34,5 +33,11 @@ private struct ItemRowCell: View {
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 10)
             .multilineTextAlignment(.leading)
+    }
+}
+
+private struct ItemRowCell_Previews: PreviewProvider {
+    static var previews: some View {
+        ItemRowCell(title: "")
     }
 }
