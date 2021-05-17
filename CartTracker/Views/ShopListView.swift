@@ -16,8 +16,7 @@ struct ShopListView: View {
             List {
                 Section(header: ShopListHeaderView()) {
                     ForEach(store.state.shop.shops) { shop in
-                        NavigationLink(destination: ItemListView(shop: shop)
-                                        .environmentObject(store)) {
+                        NavigationLink(destination: ItemListView(shop: shop)) {
                             ShopRow(shop: shop)
                         }
                     }
@@ -44,7 +43,6 @@ struct ShopListView: View {
             .hidden()
             .sheet(isPresented: $showDialog, content: {
                 NewShopView(showDialog: $showDialog)
-                    .environmentObject(store)
             })
     }
     

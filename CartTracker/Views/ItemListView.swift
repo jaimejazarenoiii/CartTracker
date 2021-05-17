@@ -51,7 +51,6 @@ struct ItemListView: View {
             .hidden()
             .sheet(isPresented: $showDialog, content: {
                 NewItemView(showDialog: $showDialog)
-                    .environmentObject(store)
             })
     }
     
