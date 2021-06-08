@@ -41,6 +41,8 @@
 		E1223CA7264F596000B9F9DA /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1223CA6264F596000B9F9DA /* NewItemView.swift */; };
 		E1223CAC264F5BE900B9F9DA /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1223CAB264F5BE900B9F9DA /* ItemRow.swift */; };
 		E1C23433265244EC00B530AD /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C23432265244EC00B530AD /* Double+Round.swift */; };
+		E1E95331266F9B890054034D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E95330266F9B890054034D /* AppDelegate.swift */; };
+		E1E95339266F9C0E0054034D /* ShopListViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E95338266F9C0E0054034D /* ShopListViewUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		E1223CA6264F596000B9F9DA /* NewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
 		E1223CAB264F5BE900B9F9DA /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemRow.swift; path = "CartTracker/Custom Components/Views/ItemRow.swift"; sourceTree = SOURCE_ROOT; };
 		E1C23432265244EC00B530AD /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
+		E1E95330266F9B890054034D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E1E95338266F9C0E0054034D /* ShopListViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,14 +155,14 @@
 		B3D668FE264D396700B628F8 /* CartTracker */ = {
 			isa = PBXGroup;
 			children = (
-				E1074F94264FB25800A0D767 /* Protocols */,
-				E1074F75264F979100A0D767 /* Custom Components */,
 				B3D66933264D3B1000B628F8 /* App Defaults */,
-				B3D66934264D3B1E00B628F8 /* Views */,
+				E1074F75264F979100A0D767 /* Custom Components */,
 				B3D66932264D3B0A00B628F8 /* Models */,
+				E1074F94264FB25800A0D767 /* Protocols */,
 				E1074F8B264FAEB400A0D767 /* Services */,
-				B3D66931264D3B0100B628F8 /* Supporting Files */,
 				B3D66930264D3AFC00B628F8 /* Store */,
+				B3D66931264D3B0100B628F8 /* Supporting Files */,
+				B3D66934264D3B1E00B628F8 /* Views */,
 				B3D66905264D396900B628F8 /* Preview Content */,
 			);
 			path = CartTracker;
@@ -186,6 +190,7 @@
 			children = (
 				B3D6691C264D396900B628F8 /* CartTrackerUITests.swift */,
 				B3D6691E264D396900B628F8 /* Info.plist */,
+				E1E95338266F9C0E0054034D /* ShopListViewUITests.swift */,
 			);
 			path = CartTrackerUITests;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				B3D668FF264D396700B628F8 /* CartTrackerApp.swift */,
+				E1E95330266F9B890054034D /* AppDelegate.swift */,
 			);
 			path = "App Defaults";
 			sourceTree = "<group>";
@@ -456,6 +462,7 @@
 				B3D66936264D3B5100B628F8 /* Store.swift in Sources */,
 				B3D66960264D3C3400B628F8 /* ShopState.swift in Sources */,
 				E1074F8D264FAEC000A0D767 /* ShopService.swift in Sources */,
+				E1E95331266F9B890054034D /* AppDelegate.swift in Sources */,
 				B3D66981264D3E1200B628F8 /* ItemReducer.swift in Sources */,
 				B3D6697C264D3E0B00B628F8 /* ItemAction.swift in Sources */,
 				B32FA55D264DE9BE00B4727E /* NewShopView.swift in Sources */,
@@ -495,6 +502,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E95339266F9C0E0054034D /* ShopListViewUITests.swift in Sources */,
 				B3D6691D264D396900B628F8 /* CartTrackerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
