@@ -43,6 +43,7 @@
 		E1C23433265244EC00B530AD /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C23432265244EC00B530AD /* Double+Round.swift */; };
 		E1E95331266F9B890054034D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E95330266F9B890054034D /* AppDelegate.swift */; };
 		E1E95339266F9C0E0054034D /* ShopListViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E95338266F9C0E0054034D /* ShopListViewUITests.swift */; };
+		E1E9534D266FAE990054034D /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E9534C266FAE990054034D /* SnapshotHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		E1C23432265244EC00B530AD /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
 		E1E95330266F9B890054034D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1E95338266F9C0E0054034D /* ShopListViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewUITests.swift; sourceTree = "<group>"; };
+		E1E9534C266FAE990054034D /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = CartTrackerUITests/Vendor/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 		B3D6691B264D396900B628F8 /* CartTrackerUITests */ = {
 			isa = PBXGroup;
 			children = (
+				E1E95354266FAE9E0054034D /* Vendor */,
 				B3D6691C264D396900B628F8 /* CartTrackerUITests.swift */,
 				B3D6691E264D396900B628F8 /* Info.plist */,
 				E1E95338266F9C0E0054034D /* ShopListViewUITests.swift */,
@@ -320,6 +323,14 @@
 				E1C23432265244EC00B530AD /* Double+Round.swift */,
 			);
 			path = Double;
+			sourceTree = "<group>";
+		};
+		E1E95354266FAE9E0054034D /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				E1E9534C266FAE990054034D /* SnapshotHelper.swift */,
+			);
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,6 +515,7 @@
 			files = (
 				E1E95339266F9C0E0054034D /* ShopListViewUITests.swift in Sources */,
 				B3D6691D264D396900B628F8 /* CartTrackerUITests.swift in Sources */,
+				E1E9534D266FAE990054034D /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
