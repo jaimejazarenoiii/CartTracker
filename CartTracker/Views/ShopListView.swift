@@ -36,6 +36,7 @@ struct ShopListView: View {
                                         Image(systemName: "plus.circle").imageScale(.large)
                                     }
             )
+            .accessibilityIdentifier("shopList")
         }
         .ignoresSafeArea()
         .onAppear(perform: fetchShops)
