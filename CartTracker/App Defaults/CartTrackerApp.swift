@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct CartTrackerApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     let store = AppStore(initialState: .init(), reducer: appReducer, environment: World())
 
     var body: some Scene {
