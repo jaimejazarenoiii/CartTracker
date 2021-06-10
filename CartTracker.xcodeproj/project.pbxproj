@@ -170,11 +170,11 @@
 			isa = PBXGroup;
 			children = (
 				E156AC662671B2CD00DAEBCC /* Constants */,
-				E156AC632671B10300DAEBCC /* Resources */,
 				B3D66933264D3B1000B628F8 /* App Defaults */,
 				E1074F75264F979100A0D767 /* Custom Components */,
 				B3D66932264D3B0A00B628F8 /* Models */,
 				E1074F94264FB25800A0D767 /* Protocols */,
+				E156AC632671B10300DAEBCC /* Resources */,
 				E1074F8B264FAEB400A0D767 /* Services */,
 				B3D66930264D3AFC00B628F8 /* Store */,
 				B3D66931264D3B0100B628F8 /* Supporting Files */,

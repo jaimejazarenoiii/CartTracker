@@ -1,0 +1,12 @@
+/*
+  Localizable.strings
+  CartTracker
+
+  Created by Jaime Jazareno III on 6/10/21.
+
+*/
+"appName" = "Cart Tracker";
+"shoppingSessions" = "Shopping Sessions";
+"runningBill" = "Running Bill";
+"budget" = "Budget";
+"runningBalance %@" = "Running Balance: %@";
