@@ -13,17 +13,20 @@ struct Shop: Codable, Identifiable {
     var items: [Item]
     var budgetAmount: Double
     var date: Date = Date()
+    var status: ShopSessionStatus
 
     init(id: Int = UUID().hashValue,
          name: String,
          items: [Item] = [],
          budgetAmount: Double = 0.0,
-         date: Date = Date()) {
+         date: Date = Date(),
+         status: ShopSessionStatus = .active) {
         self.id = id
         self.name = name
         self.items = items
         self.budgetAmount = budgetAmount
         self.date = date
+        self.status = status
     }
 
     func totalExpenses() -> Double {
@@ -43,6 +46,7 @@ extension Shop: Persistable {
         budgetAmount = managedObject.budgetAmount
         items = managedObject.items.map { Item(managedObject: $0) }
         date = managedObject.date
+        status = ShopSessionStatus(rawValue: managedObject.status) ?? .active
     }
     func managedObject() -> ShopObject {
         let shop = ShopObject()
@@ -50,6 +54,7 @@ extension Shop: Persistable {
         shop.name = name
         shop.budgetAmount = budgetAmount
         shop.date = date
+        shop.status = status.rawValue
         shop.items.append(objectsIn: items.map { $0.managedObject() })
         return shop
     }

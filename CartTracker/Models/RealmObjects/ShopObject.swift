@@ -14,6 +14,7 @@ class ShopObject: Object {
     var items = List<ItemObject>()
     @objc dynamic var budgetAmount: Double = 0
     @objc dynamic var date: Date = Date()
+    @objc dynamic var status: Int = 1
     
     override static func primaryKey() -> String? {
         "id"
