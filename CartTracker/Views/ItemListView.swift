@@ -14,53 +14,67 @@ struct ItemListView: View {
     var shop: Shop
     
     var body: some View {
-        VStack {
-            HStack {
-                Spacer()
-                Text("Running Balance: ")
-                    .font(.title2)
-                Text(String(format: "%.2f", store.state.shop.shop.runningBalance()))
-                    .foregroundColor(store.state.shop.shop.runningBalance() < 0 ? .red : .green)
-                    .font(.title2)
-            }
+        VStack(spacing: 0) {
             List {
-                Section(header: ItemListHeaderView()) {
-                    ForEach(store.state.shop.shop.items.reversed()) { item in
-                        ItemRow(item: item)
-                    }
-                    .onDelete(perform: { indexSet in
-                        indexSet.forEach { index in
-                            store.send(.shop(action: .removeItem(store.state.shop.shop.items.reversed()[index],
-                                                                 from: store.state.shop.shop)))
-                        }
-                    })
+                ForEach(store.state.shop.shop.items.reversed()) { item in
+                    ItemRowView(item: item)
+                        .listRowInsets(EdgeInsets())
                 }
+                .onDelete(perform: { indexSet in
+                    indexSet.forEach { index in
+                        store.send(.shop(action: .removeItem(store.state.shop.shop.items.reversed()[index],
+                                                             from: store.state.shop.shop)))
+                    }
+                })
             }
-            .listStyle(PlainListStyle())
-            .navigationTitle("\(shop.name)'s Cart")
+            .navigationBarTitle(Text("\(shop.name)'s Cart"), displayMode: .large)
             .navigationBarItems(trailing:
-                                    Button(action: {
-                                        showDialog = true
-                                    }) {
-                                        Image(systemName: "plus.circle").imageScale(.large)
-                                    }
+                Menu {
+                    Button("Add product", action: { showDialog = true })
+                Button("Mark as \(shop.status.option)", action: updateStatus)
+                } label: {
+                    Image(symbol: .ellipsisCircle)
+                }
             )
             .onAppear(perform: setShop)
-        }
-        Text("")
-            .hidden()
             .sheet(isPresented: $showDialog, content: {
                 NewItemView(showDialog: $showDialog)
             })
+            ZStack {
+                Rectangle()
+                    .frame(height: 80)
+                    .foregroundColor(Color.clear)
+                    .edgesIgnoringSafeArea(.bottom)
+                    .shadow(color: .black, radius: 10)
+                HStack {
+                    Spacer()
+                    Group {
+                        Text("Running Balance: ")
+                            .font(.title2.bold())
+                        Text(store.state.shop.shop.runningBalance().cleanValue)
+                            .foregroundColor(store.state.shop.shop.runningBalance() < 0 ? .red : .green)
+                            .font(.title2.bold())
+                            .padding(.trailing, 20)
+                    }
+                }
+            }
+            .background(Color.clear)
+            .clipped()
+        }
+        .background(Color(.systemGroupedBackground))
     }
     
     private func setShop() {
         store.send(.shop(action: .set(shop: shop)))
     }
+
+    private func updateStatus() {
+        store.send(.shop(action: .update(status: shop.status == .active ? .inactive : .active, shop: shop)))
+    }
 }
 
 struct ItemListView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopListView()
+        ItemListView(shop: Shop(name: "Colonade"))
     }
 }

@@ -14,39 +14,38 @@ struct ShopListView: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: ShopListHeaderView()) {
-                    ForEach(store.state.shop.shops) { shop in
-                        NavigationLink(destination: ItemListView(shop: shop)) {
-                            ShopRow(shop: shop)
-                        }
+                ForEach(store.state.shop.shops) { shop in
+                    NavigationLink(destination: ItemListView(shop: shop)) {
+                        ShopRowView(shop: shop)
                     }
-                    .onDelete(perform: { indexSet in
-                        indexSet.forEach { index in
-                            store.send(.shop(action: .delete(shop: store.state.shop.shops[index])))
-                        }
-                    })
+                    .listRowInsets(EdgeInsets())
                 }
+                .onDelete(perform: { indexSet in
+                    indexSet.forEach { index in
+                        store.send(.shop(action: .delete(shop: store.state.shop.shops[index])))
+                    }
+                })
             }
-            .listStyle(PlainListStyle())
-            .navigationTitle("Shopping Sessions")
-            .navigationBarItems(trailing:
-                                    Button(action: {
-                                        showDialog = true
-                                    }) {
-                                        Image(systemName: "plus.circle").imageScale(.large)
-                                    }
+            .background(Color(.systemGroupedBackground))
+            .navigationTitle(LocalizedString.shoppingSessions.localized)
+            .navigationBarItems(
+                trailing:
+                    Button(action: {
+                        showDialog = true
+                    }
+                ) {
+                    Image(symbol: .plusCircle).imageScale(.large)
+                }
             )
-            .accessibilityIdentifier("shopList")
-        }
-        .ignoresSafeArea()
-        .onAppear(perform: fetchShops)
-        Text("")
-            .hidden()
+            .ignoresSafeArea()
             .sheet(isPresented: $showDialog, content: {
                 NewShopView(showDialog: $showDialog)
             })
+            .accessibilityIdentifier("shopList")
+        }
+        .onAppear(perform: fetchShops)
     }
-    
+
     private func fetchShops() {
         store.send(.shop(action: .getAll))
     }
@@ -55,5 +54,6 @@ struct ShopListView: View {
 struct ShopListView_Previews: PreviewProvider {
     static var previews: some View {
         ShopListView()
+            .environmentObject(AppStore(initialState: .init(), reducer: appReducer, environment: World()))
     }
 }
