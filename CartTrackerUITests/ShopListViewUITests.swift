@@ -32,9 +32,8 @@ class ShopListViewUITests: XCTestCase {
         let screenshot = XCTAttachment(screenshot: fullScreenshot)
         screenshot.lifetime = .keepAlways
         // if we don't set lifetime to .keepAlways, Xcode will delete the image if the test passes.
-        
+
         add(screenshot)
         XCTAssertTrue(app.tables["shopList"].exists)
-        
     }
 }
