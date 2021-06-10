@@ -82,4 +82,17 @@ struct ShopService {
             print(error.localizedDescription)
         }
     }
+
+    func update(status: ShopSessionStatus, shop: Shop) {
+        do {
+            let realm = try Realm()
+            var tmpShop = shop
+            tmpShop.status = status
+            try realm.write {
+                realm.add(tmpShop.managedObject(), update: .modified)
+            }
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
 }

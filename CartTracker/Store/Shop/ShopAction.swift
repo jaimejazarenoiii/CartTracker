@@ -15,4 +15,5 @@ enum ShopAction {
     case removeItem(_ item: Item, from: Shop)
     case edit(shop: Shop)
     case delete(shop: Shop)
+    case update(status: ShopSessionStatus, shop: Shop)
 }

@@ -45,6 +45,12 @@ func shopReducer(state: inout ShopState,
             .offset {
             state.shops[shopIndex] = shop
         }
+    case .update(let status, let shop):
+        environment.shopService.update(status: status, shop: shop)
+        state.shops = environment.shopService.all().sortedByDate()
+        if let cachedShop = environment.shopService.findShop(shop.id) {
+            state.shop = cachedShop
+        }
     case .delete(let shop):
         environment.shopService.delete(shop: shop)
         state.shops = environment.shopService.all().sortedByDate()
