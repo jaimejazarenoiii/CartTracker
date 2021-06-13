@@ -8,7 +8,12 @@
 import Foundation
 
 enum ItemAction {
-    case add(item: Item)
-    case edit(item: Item)
-    case delete(index: Int)
+    case all(from: Shop)
+    case add(_ item: Item, to: Shop)
+    case edit(id: Int,
+              name: String,
+              quantity: Double,
+              price: Double,
+              shopId: Int)
+    case delete(item: Item, from: Shop)
 }

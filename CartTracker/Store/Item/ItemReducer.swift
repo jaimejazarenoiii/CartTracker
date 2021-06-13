@@ -9,19 +9,23 @@ import Foundation
 import Combine
 
 func itemReducer(state: inout ItemState,
-                    action: ItemAction,
-                    environment: World) -> AnyPublisher<ItemAction, Never>{
+                 action: ItemAction,
+                 environment: World) -> AnyPublisher<ItemAction, Never>{
     switch action {
-    case .add(let item):
-        state.items.append(item)
-    case .edit(let item):
-        if let itemIndex = state.items.enumerated()
-            .first(where: { $0.element.id == item.id })?
-            .offset {
-            state.items[itemIndex] = item
-        }
-    case .delete(let index):
-        state.items.remove(at: index)
+    case .all(let shop):
+        state.items = environment.itemService.fetchWith(shopId: shop.id)
+    case .add(let item, let shop):
+        environment.itemService.addItem(item, to: shop)
+        state.items = environment.itemService.fetchWith(shopId: shop.id)
+    case .edit(let id, let name, let quantity, let price, let shopId):
+        environment.itemService.update(id: id,
+                                       name: name,
+                                       quantity: quantity,
+                                       price: price)
+        state.items = environment.itemService.fetchWith(shopId: shopId)
+    case .delete(let item, let shop):
+        environment.itemService.delete(item: item)
+        state.items = environment.itemService.fetchWith(shopId: shop.id)
     }
 
     return Empty().eraseToAnyPublisher()

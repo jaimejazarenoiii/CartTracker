@@ -9,11 +9,9 @@ import Foundation
 
 enum ShopAction {
     case getAll
-    case add(shop: Shop)
     case set(shop: Shop)
-    case addItem(_ item: Item, to: Shop)
-    case removeItem(_ item: Item, from: Shop)
-    case edit(shop: Shop)
+    case add(shop: Shop)
+    case edit(id: Int, name: String, budgetAmount: Double)
     case delete(shop: Shop)
     case update(status: ShopSessionStatus, shop: Shop)
 }
