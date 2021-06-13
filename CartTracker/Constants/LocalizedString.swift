@@ -10,9 +10,11 @@ import SwiftUI
 
 enum LocalizedString: String {
     case appName
+    case balance
     case budget
     case runningBill
     case shoppingSessions
+    case spent
 
     var localized: LocalizedStringKey {
         LocalizedStringKey(rawValue)
