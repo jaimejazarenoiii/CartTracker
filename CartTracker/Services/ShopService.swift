@@ -44,19 +44,6 @@ struct ShopService {
         }
     }
     
-    func addItems(_ item: Item, to: Shop) {
-        do {
-            let realm = try Realm()
-            var tmpShop = to
-            tmpShop.items.append(item)
-            try realm.write {
-                realm.add(tmpShop.managedObject(), update: .modified)
-            }
-        } catch let error {
-            print(error.localizedDescription)
-        }
-    }
-    
     func delete(shop: Shop) {
         do {
             let realm = try Realm()
@@ -64,19 +51,6 @@ struct ShopService {
                 if let cachedShop = realm.objects(ShopObject.self).last(where: { $0.id == shop.id }) {
                     realm.delete(cachedShop)
                 }
-            }
-        } catch let error {
-            print(error.localizedDescription)
-        }
-    }
-    
-    func removeItem(_ item: Item, from: Shop) {
-        do {
-            let realm = try Realm()
-            var tmpShop = from
-            tmpShop.items.removeAll(where: { $0.id == item.id })
-            try realm.write {
-                realm.add(tmpShop.managedObject(), update: .modified)
             }
         } catch let error {
             print(error.localizedDescription)
@@ -90,6 +64,21 @@ struct ShopService {
             tmpShop.status = status
             try realm.write {
                 realm.add(tmpShop.managedObject(), update: .modified)
+            }
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+
+    func update(id: Int, name: String, budgetAmount: Double) {
+        do {
+            let realm = try Realm()
+            guard let cachedShop = realm.objects(ShopObject.self)
+                    .first(where: { $0.id == id} ) else { return }
+            try realm.write {
+                cachedShop.name = name
+                cachedShop.budgetAmount = budgetAmount
+                realm.add(cachedShop, update: .modified)
             }
         } catch let error {
             print(error.localizedDescription)
