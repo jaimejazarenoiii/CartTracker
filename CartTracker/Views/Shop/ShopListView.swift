@@ -38,9 +38,9 @@ struct ShopListView: View {
                 }
             )
             .ignoresSafeArea()
-            .sheet(isPresented: $showDialog, content: {
+            .sheet(isPresented: $showDialog) {
                 NewShopView(showDialog: $showDialog)
-            })
+            }
             .accessibilityIdentifier("shopList")
         }
         .onAppear(perform: fetchShops)
