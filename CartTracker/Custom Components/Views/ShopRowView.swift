@@ -67,7 +67,7 @@ struct ShopRowView: View {
                     Text(String(shop.budgetAmount))
                         .multilineTextAlignment(.trailing)
                     Spacer()
-                    Text(LocalizedString.runningBill.localized)
+                    Text(LocalizedString.spent.localized)
                         .font(.caption)
                         .foregroundColor(.gray)
                     Text(String(shop.totalExpenses()))

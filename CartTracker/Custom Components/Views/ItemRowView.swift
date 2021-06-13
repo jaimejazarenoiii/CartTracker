@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ItemRowView: View {
+    @EnvironmentObject var store: AppStore
     var item: Item
+    @State var showDialog: ItemListView.ActiveSheet?
+
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
             Text(item.name)
@@ -33,9 +36,27 @@ struct ItemRowView: View {
                     .foregroundColor(.gray)
                 Text(item.total().cleanValue)
             }
+            VStack(alignment: .trailing) {
+                Image(symbol: .pencilCircle)
+                    .foregroundColor(Color.blue)
+                    .offset(x: 5, y: -15)
+                    .onTapGesture { // workaround for adding button in list
+                        showDialog = .edit
+                    }
+            }
         }
         .padding()
-
+        .sheet(item: $showDialog) { dialogItem in
+            if dialogItem == .edit {
+                ItemFormView(showDialog: $showDialog,
+                             name: item.name,
+                             quantity: String(item.quantity),
+                             price: String(item.price),
+                             procedure: .edit,
+                             id: item.id,
+                             shop: store.state.shop.shop)
+            }
+        }
     }
 }
 
