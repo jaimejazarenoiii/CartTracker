@@ -6,7 +6,9 @@
 
 */
 "appName" = "Cart Tracker";
-"shoppingSessions" = "Shopping Sessions";
-"runningBill" = "Running Bill";
+"balance" = "Balance:";
 "budget" = "Budget";
 "runningBalance %@" = "Running Balance: %@";
+"runningBill" = "Running Bill";
+"shoppingSessions" = "Shopping Sessions";
+"spent" = "Spent";
