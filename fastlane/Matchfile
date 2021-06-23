@@ -1,4 +1,4 @@
-git_url("git@github.com-jaimejazarenoiii:jaimejazarenoiii/ios-certificates.git")
+git_url("git@github.com-jaimejazarenoiii:jaimejazarenoiii/cart-tracker-ios-certificates.git")
 
 storage_mode("git")
 
