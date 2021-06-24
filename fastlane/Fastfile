@@ -22,7 +22,7 @@ platform :ios do
   end
 
   desc 'Release to testflight'
-  lane :testflight do
+  lane :release do
     build_app(scheme: 'Lista')
     upload_to_testflight(skip_waiting_for_build_processing: true)
   end
