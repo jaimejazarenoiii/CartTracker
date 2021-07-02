@@ -228,6 +228,8 @@ enum SFSymbol: String, CaseIterable {
     case bahtsignSquareFill = "bahtsign.square.fill"
     case bandage = "bandage"
     case bandageFill = "bandage.fill"
+    case bankNote = "banknote"
+    case bankNoteFill = "banknote.fill"
     case barcode = "barcode"
     case barcodeViewfinder = "barcode.viewfinder"
     case battery0 = "battery.0"
