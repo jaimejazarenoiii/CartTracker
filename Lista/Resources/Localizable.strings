@@ -5,10 +5,23 @@
   Created by Jaime Jazareno III on 6/10/21.
 
 */
+"addProduct" = "Add product";
 "appName" = "Cart Tracker";
 "balance" = "Balance:";
 "budget" = "Budget";
+"editShoppingSessionDetails" = "Edit Shopping Session Details";
+"price" = "Price";
 "runningBalance %@" = "Running Balance: %@";
 "runningBill" = "Running Bill";
 "shoppingSessions" = "Shopping Sessions";
 "spent" = "Spent";
+"total" = "Total";
+"quantity" = "Quantity";
+
+// Onboarding
+"firstOnboardingTitle" = "Track your cart’s items and running balance";
+"secondOnboardingTitle" = "Plan your budget and stick with it";
+"thirdOnboardingTitle" = "Review your records";
+"firstOnboardingDescription" = "Have a digital list of your items in cart, track your running balance and avoid shocking revalation of your total at the counter.";
+"secondOnboardingDescription" = "Plan your budget ahead. No more exceeding on your alloted budget, with Lísta app, you’ll be aware of the total expenses realtime.";
+"thirdOnboardingDescription" = "Have a record of your current and previous shopping sessions that you can review anytime and anywhere. Never use any paper anymore. With Lísta’s help you can be a hero and save our Mother Earth.";
