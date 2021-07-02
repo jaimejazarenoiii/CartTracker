@@ -10,8 +10,4 @@ import Foundation
 struct ItemState {
     var items: [Item]
     var item: Item
-    
-    func items(shop: Shop) -> [Item] {
-        shop.items
-    }
 }

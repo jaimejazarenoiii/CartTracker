@@ -52,9 +52,6 @@
 		E108456B2683FEFB002630B7 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10845422683FEFA002630B7 /* Store.swift */; };
 		E108456C2683FEFB002630B7 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10845432683FEFA002630B7 /* World.swift */; };
 		E108456E2684012D002630B7 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108456D2684012D002630B7 /* SnapshotHelper.swift */; };
-		E1A9BFB4268EE844001B2CA2 /* UserDefaultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9BFB3268EE844001B2CA2 /* UserDefaultState.swift */; };
-		E1A9BFB6268EE84E001B2CA2 /* UserDefaultReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9BFB5268EE84E001B2CA2 /* UserDefaultReducer.swift */; };
-		E1A9BFB8268EE857001B2CA2 /* UserDefaultAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9BFB7268EE857001B2CA2 /* UserDefaultAction.swift */; };
 		E1A9BFC0268F0533001B2CA2 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9BFBF268F0533001B2CA2 /* Assets.swift */; };
 		E1A9BFC3268F0BC4001B2CA2 /* StringProtocol+Capitalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9BFC2268F0BC4001B2CA2 /* StringProtocol+Capitalize.swift */; };
 		E1A9BFC6268F2E51001B2CA2 /* DecimalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9BFC5268F2E50001B2CA2 /* DecimalTextField.swift */; };
@@ -132,9 +129,6 @@
 		E10845422683FEFA002630B7 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		E10845432683FEFA002630B7 /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		E108456D2684012D002630B7 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
-		E1A9BFB3268EE844001B2CA2 /* UserDefaultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultState.swift; sourceTree = "<group>"; };
-		E1A9BFB5268EE84E001B2CA2 /* UserDefaultReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultReducer.swift; sourceTree = "<group>"; };
-		E1A9BFB7268EE857001B2CA2 /* UserDefaultAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultAction.swift; sourceTree = "<group>"; };
 		E1A9BFBF268F0533001B2CA2 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		E1A9BFC2268F0BC4001B2CA2 /* StringProtocol+Capitalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringProtocol+Capitalize.swift"; sourceTree = "<group>"; };
 		E1A9BFC5268F2E50001B2CA2 /* DecimalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalTextField.swift; sourceTree = "<group>"; };
@@ -408,7 +402,6 @@
 				E10845382683FEFA002630B7 /* AppReducer.swift */,
 				E10845422683FEFA002630B7 /* Store.swift */,
 				E10845432683FEFA002630B7 /* World.swift */,
-				E1A9BFAE268EE7DC001B2CA2 /* UserDefault */,
 				E108453E2683FEFA002630B7 /* Item */,
 				E10845392683FEFA002630B7 /* Shop */,
 			);
@@ -433,16 +426,6 @@
 				E10845412683FEFA002630B7 /* ItemAction.swift */,
 			);
 			path = Item;
-			sourceTree = "<group>";
-		};
-		E1A9BFAE268EE7DC001B2CA2 /* UserDefault */ = {
-			isa = PBXGroup;
-			children = (
-				E1A9BFB3268EE844001B2CA2 /* UserDefaultState.swift */,
-				E1A9BFB5268EE84E001B2CA2 /* UserDefaultReducer.swift */,
-				E1A9BFB7268EE857001B2CA2 /* UserDefaultAction.swift */,
-			);
-			path = UserDefault;
 			sourceTree = "<group>";
 		};
 		E1A9BFC1268F0BA9001B2CA2 /* StringProtocol */ = {
@@ -643,10 +626,7 @@
 				E1FCB145268B41F200160AE4 /* OnboardingView.swift in Sources */,
 				E108454B2683FEFB002630B7 /* Item.swift in Sources */,
 				E10845512683FEFB002630B7 /* ItemRowView.swift in Sources */,
-				E1A9BFB6268EE84E001B2CA2 /* UserDefaultReducer.swift in Sources */,
-				E1A9BFB8268EE857001B2CA2 /* UserDefaultAction.swift in Sources */,
 				E108454C2683FEFB002630B7 /* Shop.swift in Sources */,
-				E1A9BFB4268EE844001B2CA2 /* UserDefaultState.swift in Sources */,
 				E10845542683FEFB002630B7 /* ShopRowView.swift in Sources */,
 				E10845692683FEFB002630B7 /* ItemReducer.swift in Sources */,
 				E10845672683FEFB002630B7 /* AppAction.swift in Sources */,
