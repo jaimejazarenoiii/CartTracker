@@ -57,7 +57,7 @@ struct ItemListView: View {
                         })
                     }
                 }
-                .listStyle(.insetGrouped)
+                .listStyle(InsetGroupedListStyle())
                 .navigationBarTitle("", displayMode: .inline)
                 .navigationBarItems(trailing: menuView)
                 .onAppear(perform: setupData)
