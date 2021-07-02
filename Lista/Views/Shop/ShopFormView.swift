@@ -10,7 +10,7 @@ import SwiftUI
 struct ShopFormView: View {
     @EnvironmentObject var store: AppStore
     @State var name: String = ""
-    @State var budget: String = ""
+    @State var budget: Double = 0.0
     @Binding var showDialog: ItemListView.ActiveSheet?
     var procedure: Procedure = .add
     var id: Int = 0
@@ -19,7 +19,8 @@ struct ShopFormView: View {
         NavigationView {
             Form {
                 TextField("Name", text: $name)
-                TextField("Budget", text: $budget)
+                DecimalTextField(L10n.budget.localizedString,
+                                 numericValue: $budget)
             }
             .navigationBarItems(
                 leading: Button("Cancel",
@@ -37,19 +38,19 @@ struct ShopFormView: View {
     }
 
     private func add() {
-        let shop = Shop(name: name, budgetAmount: Double(budget) ?? 0.0)
+        let shop = Shop(name: name, budgetAmount: budget)
         store.send(.shop(action: .add(shop: shop)))
     }
 
     private func edit() {
-        store.send(.shop(action: .edit(id: id, name: name, budgetAmount: Double(budget) ?? 0.0)))
+        store.send(.shop(action: .edit(id: id, name: name, budgetAmount: budget)))
     }
 }
 
 struct ShopFormView_Previews: PreviewProvider {
     static var previews: some View {
         ShopFormView(name: "",
-                     budget: "",
+                     budget: 0.0,
                      showDialog: .constant(.add))
     }
 }

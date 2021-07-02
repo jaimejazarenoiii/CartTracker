@@ -13,35 +13,50 @@ struct ShopListView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(store.state.shop.shops) { shop in
-                    NavigationLink(destination: ItemListView(shop: shop)) {
-                        ShopRowView(shop: shop)
+            if store.state.shop.shops.isEmpty {
+                EmptyListView(text: "No shopping session yet. Add now.")
+                    .navigationTitle(L10n.shoppingSessions.localized)
+                    .navigationBarItems(
+                        trailing:
+                            Button(action: {
+                                showDialog = true
+                            }
+                        ) {
+                            Image(symbol: .plusCircle).imageScale(.large)
+                        }
+                    )
+                    .ignoresSafeArea()
+            } else {
+                List {
+                    ForEach(store.state.shop.shops) { shop in
+                        NavigationLink(destination: ItemListView(shop: shop)) {
+                            ShopRowView(shop: shop)
+                        }
+                        .listRowInsets(EdgeInsets())
                     }
-                    .listRowInsets(EdgeInsets())
+                    .onDelete(perform: { indexSet in
+                        indexSet.forEach { index in
+                            store.send(.shop(action: .delete(shop: store.state.shop.shops[index])))
+                        }
+                    })
                 }
-                .onDelete(perform: { indexSet in
-                    indexSet.forEach { index in
-                        store.send(.shop(action: .delete(shop: store.state.shop.shops[index])))
+                .background(Color(.systemGroupedBackground))
+                .navigationTitle(L10n.shoppingSessions.localized)
+                .navigationBarItems(
+                    trailing:
+                        Button(action: {
+                            showDialog = true
+                        }
+                    ) {
+                        Image(symbol: .plusCircle).imageScale(.large)
                     }
-                })
+                )
+                .ignoresSafeArea()
+                .accessibilityIdentifier("shopList")
             }
-            .background(Color(.systemGroupedBackground))
-            .navigationTitle(LocalizedString.shoppingSessions.localized)
-            .navigationBarItems(
-                trailing:
-                    Button(action: {
-                        showDialog = true
-                    }
-                ) {
-                    Image(symbol: .plusCircle).imageScale(.large)
-                }
-            )
-            .ignoresSafeArea()
-            .sheet(isPresented: $showDialog) {
-                NewShopView(showDialog: $showDialog)
-            }
-            .accessibilityIdentifier("shopList")
+        }
+        .sheet(isPresented: $showDialog) {
+            NewShopView(showDialog: $showDialog)
         }
         .onAppear(perform: fetchShops)
     }

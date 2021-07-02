@@ -12,8 +12,8 @@ struct ItemFormView: View {
     @EnvironmentObject var store: AppStore
     @Binding var showDialog: ItemListView.ActiveSheet?
     @State var name: String = ""
-    @State var quantity: String = ""
-    @State var price: String = ""
+    @State var quantity: Double = 0.0
+    @State var price: Double = 0.0
     var procedure: Procedure = .add
     var id: Int = 0
     var shop: Shop
@@ -22,8 +22,10 @@ struct ItemFormView: View {
         NavigationView {
             Form {
                 TextField("Name", text: $name)
-                TextField("Quantity", text: $quantity)
-                TextField("Price", text: $price)
+                DecimalTextField(L10n.quantity.localizedString,
+                                 numericValue: $quantity)
+                DecimalTextField(L10n.price.localizedString,
+                                 numericValue: $price)
             }
             .navigationBarItems(
                 leading: Button("Cancel",
@@ -42,8 +44,8 @@ struct ItemFormView: View {
 
     private func add() {
         let item = Item(name: name,
-                        quantity: Double(quantity) ?? 0.0,
-                        price: Double(price) ?? 0.0)
+                        quantity: quantity,
+                        price: price)
         store.send(.item(action: .add(item, to: shop)))
         store.send(.item(action: .all(from: shop)))
         store.send(.shop(action: .set(shop: shop)))
@@ -52,8 +54,8 @@ struct ItemFormView: View {
     private func edit() {
         store.send(.item(action: .edit(id: id,
                                        name: name,
-                                       quantity: Double(quantity) ?? 0.0,
-                                       price: Double(price) ?? 0.0,
+                                       quantity: quantity,
+                                       price: price,
                                        shopId: shop.id)))
         store.send(.shop(action: .set(shop: shop)))
     }
@@ -63,8 +65,8 @@ struct ItemFormView_Previews: PreviewProvider {
     static var previews: some View {
         ItemFormView(showDialog: .constant(.add),
                      name: "",
-                     quantity: "",
-                     price: "",
+                     quantity: 0.0,
+                     price: 0.0,
                      shop: Shop(name: "Colonade"))
     }
 }
