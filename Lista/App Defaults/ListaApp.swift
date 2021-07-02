@@ -10,12 +10,17 @@ import SwiftUI
 @main
 struct ListaApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @AppStorage("isFirstRun") var isFirstRun: Bool = true
     let store = AppStore(initialState: .init(), reducer: appReducer, environment: World())
 
     var body: some Scene {
         WindowGroup {
-            ShopListView()
-                .environmentObject(store)
+            if isFirstRun {
+                OnboardingTabView()
+            } else {
+                ShopListView()
+                    .environmentObject(store)
+            }
         }
     }
 }

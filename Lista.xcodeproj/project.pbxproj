@@ -14,7 +14,7 @@
 		E10845442683FEFB002630B7 /* SFSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10845072683FEFA002630B7 /* SFSymbols.swift */; };
 		E10845452683FEFB002630B7 /* ShopSessionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10845082683FEFA002630B7 /* ShopSessionStatus.swift */; };
 		E10845462683FEFB002630B7 /* Procedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10845092683FEFA002630B7 /* Procedure.swift */; };
-		E10845472683FEFB002630B7 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108450A2683FEFA002630B7 /* LocalizedString.swift */; };
+		E10845472683FEFB002630B7 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108450A2683FEFA002630B7 /* L10n.swift */; };
 		E10845482683FEFB002630B7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E108450C2683FEFA002630B7 /* Localizable.strings */; };
 		E10845492683FEFB002630B7 /* ItemObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108450F2683FEFA002630B7 /* ItemObject.swift */; };
 		E108454A2683FEFB002630B7 /* ShopObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10845102683FEFA002630B7 /* ShopObject.swift */; };
@@ -52,7 +52,17 @@
 		E108456B2683FEFB002630B7 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10845422683FEFA002630B7 /* Store.swift */; };
 		E108456C2683FEFB002630B7 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10845432683FEFA002630B7 /* World.swift */; };
 		E108456E2684012D002630B7 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E108456D2684012D002630B7 /* SnapshotHelper.swift */; };
+		E1A9BFB4268EE844001B2CA2 /* UserDefaultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9BFB3268EE844001B2CA2 /* UserDefaultState.swift */; };
+		E1A9BFB6268EE84E001B2CA2 /* UserDefaultReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9BFB5268EE84E001B2CA2 /* UserDefaultReducer.swift */; };
+		E1A9BFB8268EE857001B2CA2 /* UserDefaultAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9BFB7268EE857001B2CA2 /* UserDefaultAction.swift */; };
+		E1A9BFC0268F0533001B2CA2 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9BFBF268F0533001B2CA2 /* Assets.swift */; };
+		E1A9BFC3268F0BC4001B2CA2 /* StringProtocol+Capitalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9BFC2268F0BC4001B2CA2 /* StringProtocol+Capitalize.swift */; };
+		E1A9BFC6268F2E51001B2CA2 /* DecimalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9BFC5268F2E50001B2CA2 /* DecimalTextField.swift */; };
+		E1A9BFCC268F36DC001B2CA2 /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9BFCB268F36DC001B2CA2 /* EmptyListView.swift */; };
 		E1E95339266F9C0E0054034D /* ShopListViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E95338266F9C0E0054034D /* ShopListViewUITests.swift */; };
+		E1FCB141268B38A100160AE4 /* OnboardingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FCB140268B38A100160AE4 /* OnboardingTabView.swift */; };
+		E1FCB145268B41F200160AE4 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FCB144268B41F200160AE4 /* OnboardingView.swift */; };
+		E1FCB147268B4A9400160AE4 /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FCB146268B4A9400160AE4 /* OnboardingData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +93,7 @@
 		E10845072683FEFA002630B7 /* SFSymbols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFSymbols.swift; sourceTree = "<group>"; };
 		E10845082683FEFA002630B7 /* ShopSessionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopSessionStatus.swift; sourceTree = "<group>"; };
 		E10845092683FEFA002630B7 /* Procedure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Procedure.swift; sourceTree = "<group>"; };
-		E108450A2683FEFA002630B7 /* LocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		E108450A2683FEFA002630B7 /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		E108450C2683FEFA002630B7 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E108450F2683FEFA002630B7 /* ItemObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemObject.swift; sourceTree = "<group>"; };
 		E10845102683FEFA002630B7 /* ShopObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopObject.swift; sourceTree = "<group>"; };
@@ -122,7 +132,17 @@
 		E10845422683FEFA002630B7 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		E10845432683FEFA002630B7 /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		E108456D2684012D002630B7 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		E1A9BFB3268EE844001B2CA2 /* UserDefaultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultState.swift; sourceTree = "<group>"; };
+		E1A9BFB5268EE84E001B2CA2 /* UserDefaultReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultReducer.swift; sourceTree = "<group>"; };
+		E1A9BFB7268EE857001B2CA2 /* UserDefaultAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultAction.swift; sourceTree = "<group>"; };
+		E1A9BFBF268F0533001B2CA2 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		E1A9BFC2268F0BC4001B2CA2 /* StringProtocol+Capitalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringProtocol+Capitalize.swift"; sourceTree = "<group>"; };
+		E1A9BFC5268F2E50001B2CA2 /* DecimalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalTextField.swift; sourceTree = "<group>"; };
+		E1A9BFCB268F36DC001B2CA2 /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		E1E95338266F9C0E0054034D /* ShopListViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListViewUITests.swift; sourceTree = "<group>"; };
+		E1FCB140268B38A100160AE4 /* OnboardingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTabView.swift; sourceTree = "<group>"; };
+		E1FCB144268B41F200160AE4 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		E1FCB146268B4A9400160AE4 /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,7 +236,8 @@
 				E10845072683FEFA002630B7 /* SFSymbols.swift */,
 				E10845082683FEFA002630B7 /* ShopSessionStatus.swift */,
 				E10845092683FEFA002630B7 /* Procedure.swift */,
-				E108450A2683FEFA002630B7 /* LocalizedString.swift */,
+				E108450A2683FEFA002630B7 /* L10n.swift */,
+				E1A9BFBF268F0533001B2CA2 /* Assets.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -235,6 +256,7 @@
 				E108450E2683FEFA002630B7 /* RealmObjects */,
 				E10845112683FEFA002630B7 /* Item.swift */,
 				E10845122683FEFA002630B7 /* Shop.swift */,
+				E1FCB146268B4A9400160AE4 /* OnboardingData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +281,7 @@
 		E10845152683FEFA002630B7 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
+				E1A9BFC1268F0BA9001B2CA2 /* StringProtocol */,
 				E10845162683FEFA002630B7 /* Image */,
 				E10845182683FEFA002630B7 /* Double */,
 				E108451A2683FEFA002630B7 /* String */,
@@ -294,6 +317,7 @@
 		E108451C2683FEFA002630B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E1A9BFC4268F2E10001B2CA2 /* TextFields */,
 				E108451D2683FEFA002630B7 /* ItemRowView.swift */,
 				E108451E2683FEFA002630B7 /* Styles */,
 				E10845202683FEFA002630B7 /* View+CornerRadius.swift */,
@@ -322,6 +346,8 @@
 		E10845252683FEFA002630B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E1A9BFCB268F36DC001B2CA2 /* EmptyListView.swift */,
+				E1FCB13F268B388F00160AE4 /* Onboarding */,
 				E10845262683FEFA002630B7 /* Shop */,
 				E108452A2683FEFA002630B7 /* Item */,
 			);
@@ -377,13 +403,14 @@
 		E10845362683FEFA002630B7 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				E108453D2683FEFA002630B7 /* AppAction.swift */,
 				E10845372683FEFA002630B7 /* AppState.swift */,
 				E10845382683FEFA002630B7 /* AppReducer.swift */,
-				E10845392683FEFA002630B7 /* Shop */,
-				E108453D2683FEFA002630B7 /* AppAction.swift */,
-				E108453E2683FEFA002630B7 /* Item */,
 				E10845422683FEFA002630B7 /* Store.swift */,
 				E10845432683FEFA002630B7 /* World.swift */,
+				E1A9BFAE268EE7DC001B2CA2 /* UserDefault */,
+				E108453E2683FEFA002630B7 /* Item */,
+				E10845392683FEFA002630B7 /* Shop */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -408,12 +435,47 @@
 			path = Item;
 			sourceTree = "<group>";
 		};
+		E1A9BFAE268EE7DC001B2CA2 /* UserDefault */ = {
+			isa = PBXGroup;
+			children = (
+				E1A9BFB3268EE844001B2CA2 /* UserDefaultState.swift */,
+				E1A9BFB5268EE84E001B2CA2 /* UserDefaultReducer.swift */,
+				E1A9BFB7268EE857001B2CA2 /* UserDefaultAction.swift */,
+			);
+			path = UserDefault;
+			sourceTree = "<group>";
+		};
+		E1A9BFC1268F0BA9001B2CA2 /* StringProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				E1A9BFC2268F0BC4001B2CA2 /* StringProtocol+Capitalize.swift */,
+			);
+			path = StringProtocol;
+			sourceTree = "<group>";
+		};
+		E1A9BFC4268F2E10001B2CA2 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				E1A9BFC5268F2E50001B2CA2 /* DecimalTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
 		E1E95354266FAE9E0054034D /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
 				E108456D2684012D002630B7 /* SnapshotHelper.swift */,
 			);
 			path = Vendor;
+			sourceTree = "<group>";
+		};
+		E1FCB13F268B388F00160AE4 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E1FCB140268B38A100160AE4 /* OnboardingTabView.swift */,
+				E1FCB144268B41F200160AE4 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -555,6 +617,7 @@
 			files = (
 				E108454A2683FEFB002630B7 /* ShopObject.swift in Sources */,
 				E10845462683FEFB002630B7 /* Procedure.swift in Sources */,
+				E1A9BFCC268F36DC001B2CA2 /* EmptyListView.swift in Sources */,
 				E10845662683FEFB002630B7 /* ShopState.swift in Sources */,
 				E108455B2683FEFB002630B7 /* EditItemView.swift in Sources */,
 				E10845502683FEFB002630B7 /* String+Wordify.swift in Sources */,
@@ -564,6 +627,7 @@
 				E108455D2683FEFB002630B7 /* ListaApp.swift in Sources */,
 				E108454F2683FEFB002630B7 /* Double+Round.swift in Sources */,
 				E10845642683FEFB002630B7 /* ShopReducer.swift in Sources */,
+				E1FCB141268B38A100160AE4 /* OnboardingTabView.swift in Sources */,
 				E10845452683FEFB002630B7 /* ShopSessionStatus.swift in Sources */,
 				E108456A2683FEFB002630B7 /* ItemAction.swift in Sources */,
 				E10845612683FEFB002630B7 /* ItemService.swift in Sources */,
@@ -576,17 +640,25 @@
 				E10845602683FEFB002630B7 /* ShopService.swift in Sources */,
 				E10845682683FEFB002630B7 /* ItemState.swift in Sources */,
 				E108456B2683FEFB002630B7 /* Store.swift in Sources */,
+				E1FCB145268B41F200160AE4 /* OnboardingView.swift in Sources */,
 				E108454B2683FEFB002630B7 /* Item.swift in Sources */,
 				E10845512683FEFB002630B7 /* ItemRowView.swift in Sources */,
+				E1A9BFB6268EE84E001B2CA2 /* UserDefaultReducer.swift in Sources */,
+				E1A9BFB8268EE857001B2CA2 /* UserDefaultAction.swift in Sources */,
 				E108454C2683FEFB002630B7 /* Shop.swift in Sources */,
+				E1A9BFB4268EE844001B2CA2 /* UserDefaultState.swift in Sources */,
 				E10845542683FEFB002630B7 /* ShopRowView.swift in Sources */,
 				E10845692683FEFB002630B7 /* ItemReducer.swift in Sources */,
 				E10845672683FEFB002630B7 /* AppAction.swift in Sources */,
+				E1A9BFC0268F0533001B2CA2 /* Assets.swift in Sources */,
 				E108455E2683FEFB002630B7 /* AppDelegate.swift in Sources */,
 				E108456C2683FEFB002630B7 /* World.swift in Sources */,
-				E10845472683FEFB002630B7 /* LocalizedString.swift in Sources */,
+				E1A9BFC3268F0BC4001B2CA2 /* StringProtocol+Capitalize.swift in Sources */,
+				E10845472683FEFB002630B7 /* L10n.swift in Sources */,
+				E1A9BFC6268F2E51001B2CA2 /* DecimalTextField.swift in Sources */,
 				E10845572683FEFB002630B7 /* ShopListView.swift in Sources */,
 				E10845632683FEFB002630B7 /* AppReducer.swift in Sources */,
+				E1FCB147268B4A9400160AE4 /* OnboardingData.swift in Sources */,
 				E108455A2683FEFB002630B7 /* ItemFormView.swift in Sources */,
 				E10845592683FEFB002630B7 /* ShopFormView.swift in Sources */,
 				E10845652683FEFB002630B7 /* ShopAction.swift in Sources */,
@@ -748,9 +820,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"Lista/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3795Q8DW5P;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Lista/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -760,7 +833,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jaimejazarenoiii.lista;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.jaimejazarenoiii.lista";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
