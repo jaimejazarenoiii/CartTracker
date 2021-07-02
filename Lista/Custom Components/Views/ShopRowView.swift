@@ -21,14 +21,31 @@ struct ShopRowView: View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
-            Image(symbol: .bagFill)
+            Circle()
+                .foregroundColor(shop.status.color)
+                .frame(width: 10, height: 10)
+                .offset(x: 10, y: 8)
+                .opacity(statusOpacity)
+                .animation(pulseAnimation)
+                .onAppear {
+                    statusOpacity = shop.status == .active ?  0.3 : 1.0
+                    pulseAnimation = shop.status == .active ? Animation
+                        .easeInOut(duration: 1)
+                        .repeatForever(autoreverses: true) : .default
+                }
+                .onDisappear {
+                    statusOpacity = 1.0
+                    pulseAnimation = .default
+                }
+            Image(Assets.Images.store.name)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 50, height: 50)
+                .frame(width: 70, height: 70)
                 .scaleEffect(2)
-                .rotationEffect(.degrees(60))
+                .rotationEffect(.degrees(30))
                 .foregroundColor(Color.green)
-                .position(x: 10, y: 70)
+                .position(x: 45, y: 70)
+                .opacity(0.6)
                 .clipped()
             HStack {
                 VStack(alignment: .leading) {
@@ -44,30 +61,14 @@ struct ShopRowView: View {
                 .padding([.top, .leading], 20)
                 Spacer()
                 VStack(alignment: .trailing) {
-                    Circle()
-                        .foregroundColor(shop.status.color)
-                        .frame(width: 10, height: 10)
-                        .offset(x: 20, y: 5)
-                        .opacity(statusOpacity)
-                        .animation(pulseAnimation)
-                        .onAppear {
-                            statusOpacity = shop.status == .active ?  0.3 : 1.0
-                            pulseAnimation = shop.status == .active ? Animation
-                                .easeInOut(duration: 1)
-                                .repeatForever(autoreverses: true) : .default
-                        }
-                        .onDisappear {
-                            statusOpacity = 1.0
-                            pulseAnimation = .default
-                        }
                     Spacer()
-                    Text(LocalizedString.budget.localized)
+                    Text(L10n.budget.localized)
                         .font(.caption)
                         .foregroundColor(.gray)
                     Text(String(shop.budgetAmount))
                         .multilineTextAlignment(.trailing)
                     Spacer()
-                    Text(LocalizedString.spent.localized)
+                    Text(L10n.spent.localized)
                         .font(.caption)
                         .foregroundColor(.gray)
                     Text(String(shop.totalExpenses()))

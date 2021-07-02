@@ -19,26 +19,27 @@ struct ItemRowView: View {
                 .fixedSize(horizontal: false, vertical: true)
             Spacer()
             VStack(alignment: .center) {
-                Text("Quantity")
+                Text(L10n.quantity.localizedString)
                     .font(.caption2)
                     .foregroundColor(.gray)
                 Text(item.quantity.cleanValue)
             }
             VStack(alignment: .center) {
-                Text("Price")
+                Text(L10n.price.localizedString)
                     .font(.caption2)
                     .foregroundColor(.gray)
                 Text(item.price.cleanValue)
             }
             VStack(alignment: .center) {
-                Text("Total")
+                Text(L10n.total.localizedString)
                     .font(.caption2)
                     .foregroundColor(.gray)
                 Text(item.total().cleanValue)
+                    .foregroundColor(.red)
             }
             VStack(alignment: .trailing) {
                 Image(symbol: .pencilCircle)
-                    .foregroundColor(Color.blue)
+                    .foregroundColor(Color.accentColor)
                     .offset(x: 5, y: -15)
                     .onTapGesture { // workaround for adding button in list
                         showDialog = .edit
@@ -50,8 +51,8 @@ struct ItemRowView: View {
             if dialogItem == .edit {
                 ItemFormView(showDialog: $showDialog,
                              name: item.name,
-                             quantity: String(item.quantity),
-                             price: String(item.price),
+                             quantity: item.quantity,
+                             price: item.price,
                              procedure: .edit,
                              id: item.id,
                              shop: store.state.shop.shop)
