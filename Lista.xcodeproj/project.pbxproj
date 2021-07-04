@@ -239,6 +239,7 @@
 		E108450B2683FEFA002630B7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E10845232683FEFA002630B7 /* Assets.xcassets */,
 				E108450C2683FEFA002630B7 /* Localizable.strings */,
 			);
 			path = Resources;
@@ -331,7 +332,6 @@
 		E10845222683FEFA002630B7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E10845232683FEFA002630B7 /* Assets.xcassets */,
 				E10845242683FEFA002630B7 /* Info.plist */,
 			);
 			path = "Supporting Files";
