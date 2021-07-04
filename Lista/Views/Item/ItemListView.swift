@@ -43,7 +43,7 @@ struct ItemListView: View {
         } else {
             VStack(alignment: .leading, spacing: 20) {
                 List {
-                    Section(header: Text("\(store.state.shop.shop.name)'s Cart")) {
+                    Section(header: Text("\(store.state.shop.shop.name)'s Cart: \(store.state.shop.shop.budgetAmount.cleanValue) budget")) {
                         ForEach(store.state.item.items.reversed()) { item in
                             ItemRowView(item: item)
                                 .listRowInsets(EdgeInsets())
@@ -109,14 +109,25 @@ struct ItemListView: View {
                 .shadow(color: .black, radius: 10)
             HStack {
                 Spacer()
-                Group {
-                    Text(L10n.balance.localized)
-                        .font(Font.title2.bold())
-                    Text(store.state.shop.shop.runningBalance().cleanValue)
-                        .foregroundColor(store.state.shop.shop.runningBalance() < 0 ? .red : .green)
-                        .font(Font.title2.bold())
-                        .padding(.trailing, 20)
+                VStack(alignment: .trailing) {
+                    HStack {
+                        Text("\(L10n.total.localizedString):")
+                            .font(Font.title2.bold())
+                        Text(store.state.shop.shop.totalExpenses().cleanValue)
+                            .foregroundColor(.red)
+                            .font(Font.title2.bold())
+                            .padding(.trailing, 20)
+                    }
+                    HStack {
+                        Text(L10n.balance.localized)
+                            .font(Font.title2.bold())
+                        Text(store.state.shop.shop.runningBalance().cleanValue)
+                            .foregroundColor(store.state.shop.shop.runningBalance() < 0 ? .red : .green)
+                            .font(Font.title2.bold())
+                            .padding(.trailing, 20)
+                    }
                 }
+
             }
         }
         .clipped()
